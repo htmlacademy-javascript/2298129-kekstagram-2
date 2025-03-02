@@ -1,6 +1,6 @@
-const isValidLength = (string, maxLength) => string.length <= maxLength;
+const isValidLength = (string = '', maxLength = 1) => string.length <= maxLength;
 
-const isPalindrome = function (string) {
+const isPalindrome = function (string = '') {
   const cleanedString = string
     .toLowerCase()
     .replace(/[/\s]/g, '');
