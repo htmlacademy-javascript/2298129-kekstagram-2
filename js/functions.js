@@ -4,20 +4,11 @@ const isPalindrome = function (string = '') {
   const cleanedString = string
     .toLowerCase()
     .replace(/[/\s]/g, '');
+  return cleanedString === cleanedString.split('').reverse().join('');
+};
 
-  if (cleanedString.length <= 1) {
-    return true;
-  }
-
-  let left = 0;
-  let right = cleanedString.length - 1;
-
-  while (left < right) {
-    if (cleanedString[left] !== cleanedString[right]) {
-      return false;
-    }
-    left++;
-    right--;
-  }
-  return true;
+const getNumber = function (input = '') {
+  const string = input.toString();
+  const numbers = string.match(/\d/g);
+  return numbers ? parseInt(numbers.join(''), 10) : NaN;
 };
